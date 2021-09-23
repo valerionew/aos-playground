@@ -4,12 +4,22 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+/*
+
+This is identical to the pipe, with the difference that
+this actually uses a filename that is specified
+
+It won't actually be a file on the disk, and the OS
+will handle everything 
+
+*/
+
 int main () {
    
     const char * myfifo = "/tmp/myfifo";
-    int fd = open(myfifo, O_RDONLY);
+    int fd = open(myfifo, O_RDONLY); // open the pipe in read mode
     if (fd <= 0) {
-        printf("Cannot open fifo\n");
+        printf("Cannot open fifo\n"); // pians
         return 1;
     }
 
