@@ -39,7 +39,7 @@ int main() {
         p->ready = 1;
     }
     
-    munmap(ptr_shm, sizeof(struct fibo_status));
+    munmap(ptr_shm, sizeof(struct fibo_status)); // free the space
     shm_unlink("/fibo_shm");
     
     return 0;

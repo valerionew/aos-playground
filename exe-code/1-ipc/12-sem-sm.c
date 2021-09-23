@@ -1,5 +1,5 @@
 #include <errno.h>
-#include <semaphore.h>
+#include <semaphore.h> // requires gcc -pthread
 #include <stdio.h>
 #include <string.h>
 #include <sys/mman.h>
@@ -7,6 +7,20 @@
 #include <sys/fcntl.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+/*
+Semaphores are like semaphores for threads, but now are for processes
+
+There are semaphores that are limited to the 0/1 range, (go/nogo)? and arecalled binary
+
+Semaphores can be named or unnamed. For an unnamed semaphore it is required to have
+a parent-child relationship between processes. 
+
+The status of a semamphore can be checked with sem_wait, sem_trywait (non-blocking)
+or sem_timedwait
+
+
+*/
 
 struct fibo_status {    
     char done;

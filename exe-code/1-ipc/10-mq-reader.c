@@ -41,10 +41,6 @@ int main()
 
     while (attr.mq_curmsgs != 0) {
         ssize_t size = mq_receive(mqd, buf, MSG_SIZE, &prio);
-        // mqd : Message queue descriptor
-        // buf : pointer to the message
-        // MSG_SIZE : message size
-        // &prio :  priority: the higher the number, the higher the priority (not always this way)
 
         if (size < 0) {
             printf("main - mq_receive()");

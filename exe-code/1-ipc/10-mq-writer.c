@@ -6,7 +6,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #define MSG_SIZE    100
-#define MSGQUEUE_NAME  "/bazinga"
+#define MSGQUEUE_NAME  "/myqueue"
 #define NR_MESSAGES 3
 
 char messages[3][MSG_SIZE];
@@ -20,8 +20,7 @@ int main()
     strcpy(messages[2], "Paper Covers Rock.");
 
     struct mq_attr attr;
-    attr.mq_maxmsg = 10;
-    // maxvalue: cat /proc/sys/fs/mqueue/queues_max
+    attr.mq_maxmsg = 10;        // maxvalue: cat /proc/sys/fs/mqueue/queues_max
     attr.mq_msgsize = MSG_SIZE; // maxvalue: cat /proc/sys/fs/mqueue/msgsize_max
     attr.mq_flags = 0;
     attr.mq_curmsgs = 0;
@@ -34,6 +33,11 @@ int main()
     for (int i = 0; i < NR_MESSAGES; ++i) {
         printf("%s\n", messages[i]);
         ssize_t ret = mq_send(mqd, messages[i], MSG_SIZE, priorities[i]);
+        // mqd : Message queue descriptor
+        // messages : pointer to the message
+        // MSG_SIZE : message size
+        // priorities : priority: the higher the number, the higher the priority (not always this way)
+
         if (ret < 0) {
             printf("Error - send\n");
             return 1;
