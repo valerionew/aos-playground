@@ -1,3 +1,10 @@
+# Advanced Operating Systems playground
+
+*Fork of [https://github.com/vzaccaria/aos-playground]*
+
+I'm using this repo to comment code examples from the upstream and related Politecnico di Milano Course
+
+
 > Work in progress
 
 /Advanced Operating Systems playground/
