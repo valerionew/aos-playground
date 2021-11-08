@@ -4,23 +4,5 @@
 
 I'm using this repo to comment code examples from the upstream and related Politecnico di Milano Course
 
+Code is commented with the synthax of the Better Comments extension for vscode: https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
 
-> Work in progress
-
-/Advanced Operating Systems playground/
-
-
-This repo contains some of the example code shown during the lectures. An effort
-is made to make the code reproducible as much as possible through the use of containers.
-
-# History
-
-|     Date | Note            |
-|----------+-----------------|
-| 20210621 | Initial version |
-
-
-# Usage
-
-The examples assume that you have succesfully built the containers in the
-appropriate subdirs.
