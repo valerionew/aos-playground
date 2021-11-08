@@ -1,12 +1,15 @@
 #include <iostream>
 
+//! TEMPLATES!
+//* Template is a function that takes an unknown type  parameter and returns a value.
 template <typename T>
 class Stack {
 public:
+	// variables are initialized to default values
 	Stack(int size) : nr_elem(0), size(size) {
 		data = new T[size];
 	}
-
+	
 	T pop() {
 		if (nr_elem == 0) {
 			throw std::runtime_error("No more elements.");
